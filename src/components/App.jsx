@@ -1,3 +1,4 @@
+import'../styles/Layout.css';
 
 function App() {
   return (
