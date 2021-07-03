@@ -32,20 +32,22 @@ return (
         setActiveCategory ={setActiveCategory}
         activeCategory ={activeCategory}
     />
-        <ul className="lmj-plant-list">
-            {plantList.map({id, cover, name, water, light, price, category})=>
-            !activeCategory || activeCategory === category ?(
-                <div key ={id}>
-                    <PlantItem
-                    cover ={cover}
-                    name ={name}
-                    water ={water}
-                    light ={light}
-                    price ={price}
-                    />
-                    <button onClick={()=> addToCart(name, price)}>Ajouter</button>
-                </div>
-        </ul>
+			<ul className='lmj-plant-list'>
+				{plantList.map(({ id, cover, name, water, light, price, category }) =>
+					!activeCategory || activeCategory === category ? (
+						<div key={id}>
+							<PlantItem
+								cover={cover}
+								name={name}
+								water={water}
+								light={light}
+								price={price}
+							/>
+							<button onClick={() => addToCart(name, price)}>Ajouter</button>
+						</div>
+					) : null
+				)}
+			</ul>
     </div>
     )
     }
