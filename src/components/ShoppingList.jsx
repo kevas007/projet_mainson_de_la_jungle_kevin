@@ -4,34 +4,37 @@ import PlantItem from './PlantItem'
 import Categories from './Categories'
 import '../styles/ShoppingList.css'
 
-function ShoppingList({cart , updateCarte}){
-    let [activeCategory, setActiveCategory] = useState('')
-    let category = plantList.reduce( 
-        (acc, item) =>
-        acc.includes(item.category)? acc : acc.concat(item.category),[]
-    )
-    function addToCart(name, price) {
-        let currentPlantAdded = cart.find((plant)=> plant.name === name)
-        if(currentPlantAdded){
-            let cartFliteredCurrentPlant = cart.filter((plant)=> plant.name !==name)
-            updateCarte([
-                ...cartFliteredCurrentPlant,{
-                    name, price , amount:  currentPlantAdded.amount + 1},
-                ])
-        
-    }
-    else{
-        updateCarte([...cart,{name, price, amount:1}])
-    }
+function ShoppingList({ cart, updateCart }) {
+	const [activeCategory, setActiveCategory] = useState('')
+	const categories = plantList.reduce(
+		(acc, elem) =>
+			acc.includes(elem.category) ? acc : acc.concat(elem.category),
+		[]
+	)
 
-}
-return (
-    <div className="lmj-shopping-list">
-    <categories
-        categories ={categories}
-        setActiveCategory ={setActiveCategory}
-        activeCategory ={activeCategory}
-    />
+	function addToCart(name, price) {
+		const currentPlantAdded = cart.find((plant) => plant.name === name)
+		if (currentPlantAdded) {
+			const cartFilteredCurrentPlant = cart.filter(
+				(plant) => plant.name !== name
+			)
+			updateCart([
+				...cartFilteredCurrentPlant,
+				{ name, price, amount: currentPlantAdded.amount + 1 }
+			])
+		} else {
+			updateCart([...cart, { name, price, amount: 1 }])
+		}
+	}
+
+	return (
+		<div className='lmj-shopping-list'>
+			<Categories
+				categories={categories}
+				setActiveCategory={setActiveCategory}
+				activeCategory={activeCategory}
+			/>
+
 			<ul className='lmj-plant-list'>
 				{plantList.map(({ id, cover, name, water, light, price, category }) =>
 					!activeCategory || activeCategory === category ? (
@@ -48,6 +51,8 @@ return (
 					) : null
 				)}
 			</ul>
-    </div>
-    )
-    }
+		</div>
+	)
+}
+
+export default ShoppingList

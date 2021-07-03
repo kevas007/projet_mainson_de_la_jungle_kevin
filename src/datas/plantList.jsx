@@ -5,7 +5,6 @@ import succulent from '../image/succulent.jpg'
 import olivier from '../image/olivier.jpg'
 import basil from '../image/basil.jpg'
 import mint from '../image/mint.jpg'
-import kev from '../image/kev.jpg'
 import calathea from '../image/calathea.jpg'
 import cactus from '../image/cactus.jpg'
 
@@ -16,15 +15,6 @@ import cactus from '../image/cactus.jpg'
 export const plantList =[
 
     {
-        name: 'nucifera',
-        category: 'esotique',
-        id: '2eud',
-        light: 2,
-        water: 4,
-        cover: kev,
-        price: 75 + "€"
-    },
-    {
         name: 'monstera',
         category: 'classique',
         id: '1ed',
@@ -32,7 +22,7 @@ export const plantList =[
         light: 2,
         water: 3,
         cover: monstera,
-        price: 15 + "€"
+        price: 15 
     },
     {
         name: 'ficus lyrata',
@@ -41,7 +31,7 @@ export const plantList =[
         light: 3,
         water: 1,
         cover: lyrata,
-        price: 16 + "€"
+        price: 16 
     },
     {
         name: 'pothos argneté',
@@ -50,7 +40,7 @@ export const plantList =[
         light: 2,
         water: 4,
         cover: pothos,
-        price: 9 + "€"
+        price: 9 
     },
     {
         name: 'calathea',
@@ -59,7 +49,7 @@ export const plantList =[
         light: "3",
         water: "1",
         cover: olivier,
-        price: 15 + "€"
+        price: 15 
     },
     {
         name: 'cactus',
@@ -68,7 +58,7 @@ export const plantList =[
         light: 2,
         water: 1,
         cover: cactus,
-        price: 6 + "€"
+        price: 6 
     },
     {
         name: 'basilique',
@@ -78,16 +68,16 @@ export const plantList =[
         light: 2,
         water: 3,
         cover: basil,
-        price: 5 + "€"
+        price: 5 
     },
     {
         name: 'succulente',
-        category: 'plznte grasse',
+        category: 'plante grasse',
         id: '9vn',
         light: 2,
         water: 1,
         cover: succulent,
-        price: 8 + "€"
+        price: 8 
     },
     {
         name: 'menthe',
@@ -96,6 +86,16 @@ export const plantList =[
         light: 2,
         water: 2,
         cover: mint,
-        price: 4 + "€"
-    }
+        price: 4 
+    },
+    {
+		name: 'calathea',
+		category: 'classique',
+		id: '4kk',
+		light: 2,
+		water: 3,
+		cover: calathea,
+
+		price: 20
+	}
 ];
