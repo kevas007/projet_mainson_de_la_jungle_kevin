@@ -22,7 +22,7 @@ function Page2() {
 				<img  className="img-fluid"  src={logo} alt='logo-la-maison-jungle' className='lmj-logo' />
 				<h1 className='lmj-title'>La maison jungle</h1>
 				</div>
-				<button  className="border-success" onClick={()=>{change.push("/")} }>Home</button>
+				<button  className="btn-success" onClick={()=>{change.push("/")} }>Home</button>
 			</Banner>
 			<div className='lmj-layout-inner'>
 				<Cart cart={cart} updateCart={updateCart} />

@@ -10,6 +10,25 @@ function Cart({ cart, updateCart }) {
 	useEffect(() => {
 		document.title = `LMJ: ${total}€ d'achats`
 	}, [total])
+	
+		function supp(name, price) {
+		const currentPlantAdded = cart.find((plant) => plant.name === name)
+		if (currentPlantAdded) {
+			const cartFilteredCurrentPlant = cart.filter(
+				(plant) => plant.name !== name
+			)
+			updateCart([
+				...cartFilteredCurrentPlant,
+				{ name, price, amount: currentPlantAdded.amount - 1 },
+			])
+			
+		}
+		
+		else { 
+			updateCart([...cart, { name, price, amount: 1 }])
+		}
+	}
+
 
 	return isOpen ? (
 		<div className='lmj-cart'>
@@ -23,10 +42,12 @@ function Cart({ cart, updateCart }) {
 				<div>
 					<h2>Panier</h2>
 					<ul>
-						{cart.map(({ name, price, amount }, index) => (
-							<div key={`${name}-${index}`}>
+						{cart.map(({ name, price, amount }, index ) => (
+							<div key={`${name}-${index}`} >
 								{name} {price}€ x {amount}
+								<button onClick={() => supp(name, price)} > supprimer</button>
 							</div>
+							
 						))}
 					</ul>
 					<h3>Total :{total}€</h3>
@@ -39,7 +60,7 @@ function Cart({ cart, updateCart }) {
 	) : (
 		<div className='lmj-cart-closed'>
 			<button
-				className='lmj-cart-toggle-button'
+				className='lmj-cart-toggle-button btn-success'
 				onClick={() => setIsOpen(true)}
 			>
 				Ouvrir le Panier
