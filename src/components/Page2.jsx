@@ -19,13 +19,13 @@ function Page2() {
 			<Banner className="d-flex flex-column" >
 				<div className="d-flex mx-5">
 					
-				<img  className="img-fluid"  src={logo} alt='logo-la-maison-jungle' className='lmj-logo' />
+				<img  className="img-fluid lmj-logo"  src={logo} alt='logo-la-maison-jungle' />
 				<h1 className='lmj-title'>La maison jungle</h1>
 				</div>
-				<button  className="btn-success" onClick={()=>{change.push("/")} }>Home</button>
+				<button  className="btn-success rounded-3" onClick={()=>{change.push("/")} }>Home</button>
 			</Banner>
 			<div className='lmj-layout-inner'>
-				<Cart cart={cart} updateCart={updateCart} />
+				<Cart  cart={cart} updateCart={updateCart} />
 				<ShoppingList cart={cart} updateCart={updateCart} />
 			</div>
 			<Footer />

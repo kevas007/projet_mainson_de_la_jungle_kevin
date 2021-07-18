@@ -45,13 +45,13 @@ function Cart({ cart, updateCart }) {
 						{cart.map(({ name, price, amount }, index ) => (
 							<div key={`${name}-${index}`} >
 								{name} {price}€ x {amount}
-								<button onClick={() => supp(name, price)} > supprimer</button>
+								<button className="btn-danger btn" onClick={() => supp(name, price)} > supprimer</button>
 							</div>
 							
 						))}
 					</ul>
 					<h3>Total :{total}€</h3>
-					<button onClick={() => updateCart([])}>Vider le panier</button>
+					<button className='rounded-3 btn btn-dark' onClick={() => updateCart([])}>Vider le panier</button>
 				</div>
 			) : (
 				<div>Votre panier est vide</div>
@@ -60,7 +60,7 @@ function Cart({ cart, updateCart }) {
 	) : (
 		<div className='lmj-cart-closed'>
 			<button
-				className='lmj-cart-toggle-button btn-success'
+				className='lmj-cart-toggle-button btn-success rounded-3 text-white'
 				onClick={() => setIsOpen(true)}
 			>
 				Ouvrir le Panier

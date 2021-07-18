@@ -11,11 +11,11 @@ function PlantItem({ cover, name, water, light, price }) {
 			<span className='lmj-plant-item-price'>{price}€</span>
 			<img className='lmj-plant-item-cover ' src={cover} alt={`${name} cover`} />
 			{name} 
-			<div>
-				<CareScale careType='water' scaleValue={water} />
-				<p>eau</p>
+			<div className="d-flex">
+				<CareScale  className="pl-3 pr-3"  careType='water' scaleValue={water} />
+				<p id='posit' >eau</p>
 				<CareScale careType='light' scaleValue={light} />
-				<p>Soleil</p>
+				<p id='posit'>Soleil</p>
 			</div>
 		</li>
 	)

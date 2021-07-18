@@ -9,12 +9,16 @@ function Home ()  {
         return (
             <div>
                 <Banner>
-                    <img  className="img-fluid"  src={logo} alt='logo-la-maison-jungle' className='lmj-logo' />
+                    <img  className="img-fluid lmj-logo"  src={logo} alt='logo-la-maison-jungle' />
                     <h1 className='lmj-title'>La maison jungle</h1>
                 </Banner>
                 <div className="container d-flex justify-content-center align-content-center ">
-                    <div className="home mt-5 w-25">
-                        <h1 className="text-success mb-5"> Bienvenue </h1>
+                    <div className="home mt-5 ">
+                        <div className="d-flex  justify-content-center align-content-center">
+                        <h1 className="text-success mb-5 ml-5 bton" > Bienvenue </h1>
+                        <img  className="img-fluid images"  src={logo} alt='logo-la-maison-jungle' />
+                        
+                        </div>
                         <button className="btn-success form-control w-50 " onClick={()=>{change.push("/Page2")} }>connexion</button>
                     </div>
                 </div>
