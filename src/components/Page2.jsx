@@ -6,6 +6,7 @@ import Footer from './Footer'
 import ShoppingList from './ShoppingList'
 import '../styles/Layout.css'
 import { useHistory } from 'react-router-dom';
+import { Link } from "react-router-dom";
 function Page2() {
     let savedCart = localStorage.getItem('cart')
 	let [cart, updateCart] = useState(savedCart ? JSON.parse(savedCart) : [])

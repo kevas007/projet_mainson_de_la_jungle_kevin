@@ -13,10 +13,6 @@
   animation-delay: 2s;
   animation-fill-mode: backwards;
 }
-@keyframes btn {
-    from {left: -150px;}
-  to {right:200px;;}
-}
 .images{
   width: 50px;
   height: 5px;

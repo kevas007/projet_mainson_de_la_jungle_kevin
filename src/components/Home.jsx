@@ -3,6 +3,7 @@ import { useHistory } from 'react-router-dom';
 import Banner from './Banner';
 import logo from '../image/logo.png';
 import'../styles/Home.css';
+import { Link } from "react-router-dom";
 function Home ()  {
     let  change = useHistory();
 

@@ -3,7 +3,7 @@
 	width: 250px;
 	border-radius: 20px;
 	object-fit: cover;
-	border: 3px solid green;
+	
 	border: radius 5px;
 	
 }
@@ -17,10 +17,21 @@
 	flex-direction: column;
 	text-transform: capitalize;
 	position: relative;
-}
 
+}
+#mouv{
+	overflow: hidden;
+	border: 3px solid green; 
+	border-radius: 20px;
+}
+#mouve:hover{
+
+	transform: scale(1.1);
+	transition: all 1s ease-out 0.5s;
+
+}
 .lmj-plant-item-price {
-	
+	z-index: 1;
 	position: absolute;
 	border-radius: 20px 20px 20px 0;
 	background-color: #31b472;
