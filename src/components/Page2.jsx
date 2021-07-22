@@ -4,7 +4,8 @@ import logo from '../image/logo.png'
 import Cart from './Cart'
 import Footer from './Footer'
 import ShoppingList from './ShoppingList'
-import '../styles/Layout.css'
+import '../styles/Layout.css';
+import { motion } from "framer-motion";
 import { useHistory } from 'react-router-dom';
 import { Link } from "react-router-dom";
 function Page2() {
@@ -14,7 +15,12 @@ function Page2() {
 		localStorage.setItem('cart', JSON.stringify(cart))
 	}, [cart])
 	let  change = useHistory();
-
+	let dis ={
+		visibilite: {
+			y:20,
+			transition: {delay: 2}
+		}
+	};
 	return (
 		<div>
 			<Banner className="d-flex flex-column" >
@@ -25,10 +31,14 @@ function Page2() {
 				</div>
 				<button  className="btn-success rounded-3" onClick={()=>{change.push("/")} }>Home</button>
 			</Banner>
-			<div className='lmj-layout-inner'>
+			<motion.div initial ={{opacity:0}}
+                animate={{opacity:1}}
+                transition ={{delay:1.5, duration: 1.5}}
+                variants ={ dis
+                } className='lmj-layout-inner'>
 				<Cart  cart={cart} updateCart={updateCart} />
 				<ShoppingList cart={cart} updateCart={updateCart} />
-			</div>
+			</motion.div>
 			<Footer />
 		</div>
 	)
